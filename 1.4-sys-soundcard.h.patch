@@ -1,0 +1,57 @@
+Do you really expect portability from a 10-year-old package??
+
+--- origsrc/wavplay-1.4/client.c	2009-06-28 02:41:21.075176000 -0500
++++ src/wavplay-1.4/client.c	2009-06-28 02:46:27.518608300 -0500
+@@ -57,7 +57,7 @@ static const char rcsid[] = "@(#)client.
+ #include <sys/wait.h>
+ #include <sys/stat.h>
+ #include <assert.h>
+-#include <linux/soundcard.h>
++#include <sys/soundcard.h>
+ #include "wavplay.h"
+ #include "client.h"
+ 
+--- origsrc/wavplay-1.4/file.c	2009-06-28 02:41:21.081426100 -0500
++++ src/wavplay-1.4/file.c	2009-06-28 02:44:27.170519400 -0500
+@@ -64,7 +64,7 @@ static const char rcsid[] = "@(#)file.c 
+ #include <sys/ipc.h>
+ #include <sys/ioctl.h>
+ #include <assert.h>
+-#include <linux/soundcard.h>
++#include <sys/soundcard.h>
+ #include "wavplay.h"
+ 
+ extern int clntIPC;    /* Needed for message passing in PlayDSP */
+--- origsrc/wavplay-1.4/msg.c	1999-12-03 18:06:42.000000000 -0600
++++ src/wavplay-1.4/msg.c	2009-06-28 02:45:12.787466500 -0500
+@@ -56,7 +56,7 @@ static const char rcsid[] = "@(#)msg.c $
+ #include <sys/msg.h>
+ #include <sys/ioctl.h>
+ #include <assert.h>
+-#include <linux/soundcard.h>
++#include <sys/soundcard.h>
+ #include "wavplay.h"
+ 
+ /*
+--- origsrc/wavplay-1.4/recplay.c	1999-12-03 18:06:42.000000000 -0600
++++ src/wavplay-1.4/recplay.c	2009-06-28 02:44:59.554764300 -0500
+@@ -57,7 +57,7 @@ static const char rcsid[] = "@(#)recplay
+ #include <fcntl.h>
+ #include <errno.h>
+ #include <sys/stat.h>
+-#include <linux/soundcard.h>
++#include <sys/soundcard.h>
+ #include "wavplay.h"
+ #include "server.h"
+ 
+--- origsrc/wavplay-1.4/server.c	2009-06-28 02:41:21.091426200 -0500
++++ src/wavplay-1.4/server.c	2009-06-28 02:44:41.850743800 -0500
+@@ -79,7 +79,7 @@ static const char rcsid[] = "@(#)server.
+ #ifdef SCHED_PRIORITY
+ #include <sched.h>
+ #endif
+-#include <linux/soundcard.h>
++#include <sys/soundcard.h>
+ #include "wavplay.h"
+ #include "server.h"
+ 

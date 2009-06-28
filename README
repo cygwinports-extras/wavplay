@@ -1,0 +1,55 @@
+wavplay
+------------------------------------------
+Plays and records WAV files to/from /dev/dsp.
+
+Runtime requirements:
+  cygwin-1.7.0-50
+  libgcc1-4.3.2-2
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-20080624-2
+  cygport-0.9.6-1
+  gcc4-core-4.3.2-2
+  make-3.81-2
+
+Canonical website:
+  Defunct
+
+Canonical download:
+  http://ibiblio.org/pub/linux/apps/sound/players/
+
+-------------------------------------------
+
+Build instructions:
+  unpack wavplay-1.4-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./wavplay-1.4-X.cygport all
+
+This will create:
+  /usr/src/wavplay-1.4-X-src.tar.bz2
+  /usr/src/wavplay-1.4-X.tar.bz2
+
+-------------------------------------------
+
+Files included in the binary package:
+
+  /usr/bin/wavplay.exe
+  /usr/bin/wavrec
+  /usr/share/doc/wavplay/BUGS
+  /usr/share/doc/wavplay/COPYING
+  /usr/share/doc/wavplay/README
+  /usr/share/man/man1/wavplay.1.gz
+
+------------------
+
+Port Notes:
+
+----- version 1.4-10 -----
+Initial release for Cygwin 1.7.
+
+
+Cygwin port maintained by:
+http://sourceware.org/cygwinports/
