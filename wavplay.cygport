@@ -6,7 +6,10 @@ SUMMARY="WAV file player/recorder"
 DESCRIPTION="Plays and records WAV audio files to/from /dev/dsp."
 HOMEPAGE="https://sourceforge.net/projects/wavplay/"
 SRC_URI="mirror://sourceforge/wavplay/${NAME}-${VERSION}.tar.gz"
-PATCH_URI="2.0-sys-soundcard_h.patch"
+PATCH_URI="
+	2.0-vpath.patch
+	2.0-sys-soundcard_h.patch
+"
 
 PKG_NAMES="wavplay wavplay-gui"
 wavplay_CONTENTS="usr/bin/wav* usr/share/doc/ usr/share/man/"

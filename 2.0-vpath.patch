@@ -1,0 +1,11 @@
+--- origsrc/wavplay-2.0/configure.ac	2011-06-08 19:54:50.000000000 -0500
++++ src/wavplay-2.0/configure.ac	2013-10-15 03:26:27.139368400 -0500
+@@ -158,7 +158,7 @@ AC_CHECK_HEADERS([alloca.h stdlib.h memo
+ # WAVPLAY Configuration
+ ######################################################################
+ 
+-AM_CFLAGS="-I.. -I../include"
++AM_CFLAGS="-I\$(top_builddir)/include -I\$(top_srcdir)/include"
+ 
+ AM_CONDITIONAL([WAVPLAY_NOX], [test $enable_nox = yes])
+ 
