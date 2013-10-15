@@ -1,0 +1,21 @@
+NAME="wavplay"
+VERSION=2.0
+RELEASE=1
+CATEGORY="Audio"
+SUMMARY="WAV file player/recorder"
+DESCRIPTION="Plays and records WAV audio files to/from /dev/dsp."
+HOMEPAGE="https://sourceforge.net/projects/wavplay/"
+SRC_URI="mirror://sourceforge/wavplay/${NAME}-${VERSION}.tar.gz"
+PATCH_URI="2.0-sys-soundcard_h.patch"
+
+PKG_NAMES="wavplay wavplay-gui"
+wavplay_CONTENTS="usr/bin/wav* usr/share/doc/ usr/share/man/"
+wavplay_gui_SUMMARY="${SUMMARY} (Motif GUI)"
+wavplay_gui_REQUIRES=${NAME}
+wavplay_gui_CONTENTS="usr/bin/xltwavplay.exe usr/share/applications/"
+
+src_install() {
+	cd ${B}
+	cyginstall dist_pkgdata_DATA=
+	make_desktop_entry xltwavplay "WAV Play GUI" "" "AudioVideo;Audio;Player"
+}

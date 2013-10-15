@@ -1,0 +1,88 @@
+--- origsrc/wavplay-2.0/src/client.c	2011-05-31 21:42:25.000000000 -0500
++++ src/wavplay-2.0/src/client.c	2013-10-15 02:38:03.854310000 -0500
+@@ -39,14 +39,7 @@ static const char rcsid[] = "$Id: client
+ #include <sys/wait.h>
+ #include <sys/stat.h>
+ #include <assert.h>
+-
+-#if defined(LINUX)
+-#include <linux/soundcard.h>
+-#endif
+-
+-#if defined(BSD)
+-#include <machine/soundcard.h>
+-#endif
++#include <sys/soundcard.h>
+ 
+ #include "wavplay.h"
+ #include "client.h"
+--- origsrc/wavplay-2.0/src/file.c	2011-05-31 21:42:25.000000000 -0500
++++ src/wavplay-2.0/src/file.c	2013-10-15 02:39:06.308882200 -0500
+@@ -38,13 +38,7 @@ static const char rcsid[] = "$Id: file.c
+ #include <sys/ipc.h>
+ #include <sys/ioctl.h>
+ #include <assert.h>
+-
+-#ifdef HAVE_OS_LINUX
+-#include <linux/soundcard.h>
+-#endif
+-#ifdef HAVE_OS_BSD
+-#include <machine/soundcard.h>
+-#endif
++#include <sys/soundcard.h>
+ 
+ #include "wavplay.h"
+ 
+--- origsrc/wavplay-2.0/src/msg.c	2011-05-31 21:42:25.000000000 -0500
++++ src/wavplay-2.0/src/msg.c	2013-10-15 02:39:12.666245800 -0500
+@@ -37,14 +37,7 @@ static const char rcsid[] = "$Id: msg.c,
+ #include <sys/msg.h>
+ #include <sys/ioctl.h>
+ #include <assert.h>
+-
+-#if defined(LINUX)
+-#include <linux/soundcard.h>
+-#endif
+-
+-#if defined(BSD)
+-#include <machine/soundcard.h>
+-#endif
++#include <sys/soundcard.h>
+ 
+ #include "wavplay.h"
+ 
+--- origsrc/wavplay-2.0/src/recplay.c	2011-05-31 21:42:25.000000000 -0500
++++ src/wavplay-2.0/src/recplay.c	2013-10-15 02:39:23.053840000 -0500
+@@ -30,14 +30,7 @@ static const char rcsid[] = "$Id: recpla
+ #include <fcntl.h>
+ #include <errno.h>
+ #include <sys/stat.h>
+-
+-#if defined(LINUX)
+-#include <linux/soundcard.h>
+-#endif
+-
+-#if defined(BSD)
+-#include <machine/soundcard.h>
+-#endif
++#include <sys/soundcard.h>
+ 
+ #include "wavplay.h"
+ #include "server.h"
+--- origsrc/wavplay-2.0/src/server.c	2011-05-31 21:42:25.000000000 -0500
++++ src/wavplay-2.0/src/server.c	2013-10-15 02:39:37.150646200 -0500
+@@ -46,13 +46,7 @@ static const char rcsid[] = "$Id: server
+ #include <sched.h>
+ #endif
+ 
+-#ifdef HAVE_OS_LINUX
+-#include <linux/soundcard.h>
+-#endif
+-
+-#ifdef HAVE_OS_BSD
+-#include <machine/soundcard.h>
+-#endif
++#include <sys/soundcard.h>
+ 
+ #include "wavplay.h"
+ #include "server.h"
